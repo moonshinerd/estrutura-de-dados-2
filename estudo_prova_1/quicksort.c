@@ -8,18 +8,20 @@ void troca(int *a, int *b) {
 }
 
 int particiona(int *v, int e, int d){
-    int i, pivo=v[e], pos=d+1;
-    for (i=d; i>= e; i--) {
+    int i;
+    int pivo=v[e]; //define o item mais a esquerda como o pivo
+    int pos=d+1; // coloca a posição ultrapassando d para decrementar quando o valor v[i] for >= ao pivô
+    for (i=d; i>= e; i--) { // faz a comparação iterada
         if(v[i]>=pivo) troca(&v[i],&v[--pos]);
     }
-    return pos;
+    return pos; // retorna onde o pivo parou
 }
 
 void quicksort(int *v, int e, int d){
     if(e<=d){
-        int p = particiona(v,e,d);
-        quicksort(v,e,p-1);
-        quicksort(v,p+1,d);
+        int p = particiona(v,e,d); // obtem o pivo ordenado
+        quicksort(v,e,p-1); // ordena  da esquerda até o pivo sem incluir o pivo
+        quicksort(v,p+1,d); // ordena do pivo ate a direita sem incluir o pivo
     }
 }
 
