@@ -130,10 +130,10 @@ void imprime_hash(th *hash) {
 // Função principal
 int main() {
     // Cria uma tabela hash de tamanho 7
-    th *hash = cria_hash(200);
+    th *hash = cria_hash(20);
 
     // Insere vários itens na tabela
-    int elementos[] = {10, 20, 15, 7, 8, 33, 22, 3, 18, 25,25,14};
+    int elementos[] = {10, 20, 15, 7, 8, 33, 22, 3, 18, 25,25,5,14};
     int n = sizeof(elementos) / sizeof(elementos[0]);
 
     for (int i = 0; i < n; i++) {
